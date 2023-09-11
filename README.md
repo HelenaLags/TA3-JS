@@ -1,12 +1,16 @@
 Technical Assessment 3
 
-Student’s Full Name:
+
+Student’s Full Name: Helen Laganzo
+
 Batch Number: WD84P
+
 
 GOAL
 
 - Lesson Recap: Cite more examples for each topic discussed.
 - Practice for Technical Assessment after your boot camp.
+
 
 Instructions
 
@@ -29,6 +33,7 @@ Object Constructors and Array Methods
 `(Use ES6 approach especially when writing functions and loops)`
 
 Coding Exercise 1
+
 Instructions:
 1. Create an object for a Car with the following properties:
     Brand
@@ -40,13 +45,12 @@ Instructions:
 2. Create three Car objects and assign values to their properties.
 3. Write a function that takes an array of Car objects as a argument/parameter and returns the average price of all the cars in the array.
 
-Example output:
-
 <img src="./example1.png">
 
 
 
 Coding Exercise 2
+
 Instructions:
 1. Create an object for a Book with the following properties:
     Title
@@ -67,21 +71,14 @@ Instructions:
 
 
 
-Coding Exercise 3
-Given:
-
 <img src="./example4.png">
 
 Instructions:
 1. Write a function that takes the shopping cart array as a argument/parameter and returns the total cost of all the items in the cart.
 
-`Example output:`
-
 <img src="./example5.png">
 
 2. Write a function that takes the shopping cart array as a argument/parameter and returns an array of all items that has more than five stocks and its price is greater than or equal to 20.
-
-`Example output:`
 
 <img src="./example6.png">
 
@@ -91,7 +88,10 @@ Instructions:
 
 <img src="./example7.png">
 
+
+
 Coding Exercise 4
+
 Given:
 
 Note: The grades property is in array form and you need to iterate inside to manipulate the values.
