@@ -1,33 +1,12 @@
 // Coding Exercise 1
 
-const car = [{
-    brand: 'Audi',
-    model: 'R8 Spyder',
-    year: '2023',
-    color: 'Black Metallic',
-    mileage: 70000,
-    price: 3560000
-},
-{
-    brand: 'Porsche',
-    model: '911 Carrera',
-    year: '2023',
-    color: 'Black Metallic',
-    mileage: 15000,
-    price: 1850000
-},
-{
-    brand: 'BMW',
-    model: 'i8 Roadster',
-    year: '2023',
-    color: 'Grey',
-    mileage: 25000,
-    price: 1650000
-}
+const car = [
+    { brand: 'Audi', model: 'R8 Spyder', year: '2023', color: 'Black Metallic', mileage: 70000, price: 3560000},
+    { brand: 'Porsche', model: '911 Carrera', year: '2023', color: 'Black Metallic', mileage: 15000, price: 1850000},
+    { brand: 'BMW', model: 'i8 Roadster', year: '2023', color: 'Grey', mileage: 25000, price: 1650000}
 ];
 
 const prices = car.map((car) => car.price);
-
 
 // ===== Using for of loop =====
 
@@ -38,9 +17,7 @@ const prices = car.map((car) => car.price);
 //     }
 
 //     return Math.floor(sum/array.length);
-// };
-
-// console.log(`The average of all the prices is: ${getAvg(prices)}`);
+// }; 
 
 
 // ===== Using .reduce() =====
@@ -54,10 +31,8 @@ const prices = car.map((car) => car.price);
 //     return Math.floor(sum/array.length);
 // };
 
-// console.log(`The average of all the prices is: ${getAvg(prices)}`);
 
-
-// ===== Shorthand of reduce() method =====
+// ===== Shorthand of .reduce() method =====
 
 const getAvg = (array) => {
     const sum = array.reduce((a,b) => a + b);
@@ -71,27 +46,10 @@ console.log(`The average of all the prices is: ${getAvg(prices)}`);
 
 // Coding Exercise 2
 
-let book = [{
-    title: 'To Kill a Mockingbird',
-    Author: 'Harper Lee',
-    pages: 336,
-    year: 1960,
-    Genre: 'Classic Fiction'
-},
-{
-    title: '1984',
-    Author: 'George Orwell',
-    pages: 328,
-    year: 1949,
-    Genre: 'Dystopian Fiction'
-},
-{
-    title: 'The Great Gatsby',
-    Author: 'F. Scott Fitzgerald',
-    pages: 180,
-    year: 1925,
-    Genre: 'Jazz Age'
-}
+let book = [
+    { title: 'To Kill a Mockingbird', Author: 'Harper Lee', pages: 336, year: 1960, Genre: 'Classic Fiction'},
+    { title: '1984', Author: 'George Orwell', pages: 328, year: 1949, Genre: 'Dystopian Fiction'},
+    { title: 'The Great Gatsby', Author: 'F. Scott Fitzgerald', pages: 180, year: 1925, Genre: 'Jazz Age'}
 ];
 
 let fictionBooks = book.filter(book => {
@@ -114,7 +72,6 @@ const cart = [
     {name: 'Shoes', cost: 70, quantity: 10}
 ];
 
-
 // Instruction 1
 
 const costs = cart.map((cart) => cart.cost);
@@ -125,15 +82,11 @@ const result = costs.reduce((sum, value) => {
 
 console.log(`Total cost: ${result}`);
 
-
-
 // Instruction 2
 
 const filteredCarts = cart.filter(cart => cart.quantity > 5 && cart.cost >= 20);
 
 console.log(filteredCarts);
-
-
 
 // Instruction 3
 
@@ -153,26 +106,35 @@ const student = [
     {name: 'Arthur', grade: [91, 92, 90, 95]}
 ];
 
-function calculateAverageGrades(students) { // a function definition that takes an array of student objects as a parameter
-    const result = []; // will use this empty array to store the average grade
-    for (let i = 0; i < students.length; i++) /* iterates through each student object in the students array. */
-    { 
-        const student = students[i]; // this extracts the current student object from the array
-        const grades = student.grade; // while this extracts the grades array from the current student object
+// function calculateAverageGrades(students) {
+//     const result = [];
+//     for (let i = 0; i < students.length; i++)
+//     { 
+//         const student = students[i];
+//         const grades = student.grade;
 
-        const sum = grades.reduce((a, b) => a + b, 0); /* calculates the sum of the grades for the current student using the reduce method;
-        initializes the sum to 0 and adds up all the grades in the grades array */
-        const average = sum / grades.length; // while this calculates the average grade for the current student by dividing the sum of grades by the number of grades in the grades array
+//         const sum = grades.reduce((a, b) => a + b, 0);
+    
+//         const average = sum / grades.length;
 
-        const studentObject = {
-            name: student.name, // creates an object (studentObject) with the student's name and the calculated average grade
-            averageGrade: Number(average.toFixed(2)) // Number(): used to convert the ave to a number; toFixed is a method to round the average to two decimal places
-        };
+//         const studentObject = {
+//             name: student.name,
+//             averageGrade: Number(average.toFixed(2))
+//         };
         
-        result.push(studentObject); // adds the studentObject to the result empty array above
-    }
+//         result.push(studentObject);
+//     }
 
-    return result;
+//     return result;
+// };
+
+const calculateAverageGrades = students => {
+    return students.map(student => ({
+        name: student.name,
+        averageGrade: Number(
+            (student.grade.reduce((a, b) => a + b, 0) / student.grade.length).toFixed(2)
+        )
+    }));
 };
 
 const averageGrades = calculateAverageGrades(student);

@@ -84,7 +84,7 @@ Instructions:
 
 3. Write a function that takes the shopping cart array as a parameter and returns an array of all the items whose price is greater than the supplied amount (specified as a parameter to the function).
 
-`Example output: (assume that this is the function call  getItemsAbovePrice(cart, 15))`
+`Example output: (assume that this is the function call "getItemsAbovePrice(cart, 15)")`
 
 <img src="./example7.png">
 
@@ -93,6 +93,8 @@ Instructions:
 Coding Exercise 4
 
 Given:
+
+<img src="./example8.png">
 
 Note: The grades property is in array form and you need to iterate inside to manipulate the values.
 
@@ -104,4 +106,4 @@ Write a function that takes this array as a parameter and returns an array of ob
 
 `Example output:`
 
-<img src="./example8.png">
+<img src="./example9.png">
